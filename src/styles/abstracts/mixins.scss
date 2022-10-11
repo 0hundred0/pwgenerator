@@ -1,0 +1,43 @@
+@mixin bodyText {
+    font-family: JetBrainsMonoBold;
+    font-size: 1.8rem; // 1.8rem larger
+    line-height: 2.3rem;
+    color: $color-text-base;
+}
+@mixin smBody {
+    font-size: 1.6rem;
+    color: $color-text-base;
+    font-family: JetBrainsMonoBold;
+}
+@mixin headingL {
+    font-size: 3.2rem;
+    line-height: 4.3rem;
+}
+
+@mixin headingM {
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+@mixin margin-default {
+    margin: 1.6rem;
+}
+@mixin margin-y-default {
+    margin: 1.6rem auto;
+}
+@mixin padding-default {
+    padding: 1.6rem;
+}
+
+@mixin dim-Text {
+    color: $color-text-secondary;
+}
+
+@mixin responsive($device) {
+    @if $device == tablet {
+       @media (min-width: 37.6em) { @content ; }
+    }
+    @else if $device == desktop {
+       @media (min-width: 70em) { @content ; }
+    }
+}

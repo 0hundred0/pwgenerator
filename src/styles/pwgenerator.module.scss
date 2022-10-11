@@ -1,0 +1,59 @@
+@font-face {
+    font-family: JetBrainsMonoBold;
+    src: url('../assets/fonts/JetBrainsMono-VariableFont_wght.ttf'),
+        url('../assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf');
+}
+@import './abstracts/abstracts';
+@import './components/components';
+
+.page {
+	button {
+		outline: none;
+		border: none;
+	}
+    @include smBody;
+    @include responsive(tablet) {
+        @include bodyText;
+    }
+    background: linear-gradient(to bottom, $color-ui-bg 5%, #08070B 95%);
+    min-height: 100vh;
+    padding: clamp(6.4rem, 13.3rem, 10vh) 1.6rem 6.3rem;
+}
+// clamp = min pref max
+.container {
+    max-width: 54rem;
+    margin: auto;
+}
+.header {
+    @include smBody;
+    @include margin-default;
+    @include responsive(tablet) {
+        font-size: 2.4rem;
+    }
+    color: $color-text-secondary;
+    text-align: center;
+}
+
+.footer {
+    position: relative;
+    min-width: 20rem;
+    max-width: 100%;
+    text-align: center;
+    bottom: -5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    h3 {
+        span {
+					margin-left: -0.5rem;
+            font-size: 2.2rem;
+        }
+				a {
+					color: inherit;
+					transition: all 0.15s ease;
+					text-decoration: none;
+					&:hover {
+						color: #ea165c;
+					}
+				}
+    }
+}
